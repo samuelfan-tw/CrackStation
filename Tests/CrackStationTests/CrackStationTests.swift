@@ -6,7 +6,7 @@ final class CrackStationTests: XCTestCase {
         //Given
         let input: String = "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8" // 'a' sHA1
         //When
-        let answer = CrackStation().CrackStation(password:input)
+        let answer = CrackStation().decrypt(shaHash:input)
         //Then
         print(answer! as Any)
         XCTAssertNotNil(answer)
@@ -17,7 +17,7 @@ final class CrackStationTests: XCTestCase {
         //Give
         let input: String = "b2c7c0caa10a0cca5ea7d69e54018ae0c0389dd6" // 'U' sHA1
         //When
-        let answer = CrackStation().CrackStation(password:input)
+        let answer = CrackStation().decrypt(shaHash:input)
         //Then
         print(answer! as Any)
         XCTAssertNotNil(answer)
@@ -26,7 +26,7 @@ final class CrackStationTests: XCTestCase {
         //Give
         let input: String = "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8" // 'ABC' sHA1
         //When
-        let answer = CrackStation().CrackStation(password:input)
+        let answer = CrackStation().decrypt(shaHash:input)
         //Then 
         print(answer as Any)
         XCTAssertNil(answer)

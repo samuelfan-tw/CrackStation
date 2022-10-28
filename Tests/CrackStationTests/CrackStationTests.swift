@@ -4,7 +4,7 @@ import XCTest
 final class CrackStationTests: XCTestCase {
     func testCheckCorrectPassword() throws {
         //Given
-        let input: String = "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8" // 'a' sHA1
+        let input: String = "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb" // 'a' sHA256
         //When
         let answer = CrackStation().decrypt(shaHash:input)
         //Then
@@ -15,7 +15,7 @@ final class CrackStationTests: XCTestCase {
 
     func testGetword() throws{
         //Give
-        let input: String = "b2c7c0caa10a0cca5ea7d69e54018ae0c0389dd6" // 'U' sHA1
+        let input: String = "20377cec9f51f6bf5ba1fa64649f3b1614e4eee833fd0fc5893f24f6e0accbaf" // 'a7' sHA256
         //When
         let answer = CrackStation().decrypt(shaHash:input)
         //Then

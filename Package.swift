@@ -22,7 +22,7 @@ let package = Package(
             name: "CrackStation",
             dependencies: [],
             resources: [
-                .process("sha1.json")
+                .process("POCv2.json")
             ]),
         .testTarget(
             name: "CrackStationTests",

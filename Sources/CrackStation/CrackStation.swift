@@ -4,7 +4,7 @@ public struct CrackStation : Decrypter {
     public init() {}
 
     func loadDictionaryFromDisk()  -> [String : String] {
-        guard let path = Bundle.module.url(forResource: "sha1", withExtension: "json") else { return [:] }
+        guard let path = Bundle.module.url(forResource: "POCv2", withExtension: "json") else { return [:] }
         do{
             let data = try Data(contentsOf: path)
             let jsonResult = try JSONSerialization.jsonObject(with: data)

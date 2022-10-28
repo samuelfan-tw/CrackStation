@@ -13,4 +13,22 @@ final class CrackStationTests: XCTestCase {
         XCTAssertEqual("a",answer)
     }
 
+    func testGetword() throws{
+        //Give
+        let input: String = "b2c7c0caa10a0cca5ea7d69e54018ae0c0389dd6" // 'U' sHA1
+        //When
+        let answer = CrackStation().CrackStation(password:input)
+        //Then
+        print(answer! as Any)
+        XCTAssertNotNil(answer)
+    }
+    func testError()throws {
+        //Give
+        let input: String = "3c01bdbb26f358bab27f267924aa2c9a03fcfdb8" // 'ABC' sHA1
+        //When
+        let answer = CrackStation().CrackStation(password:input)
+        //Then 
+        print(answer as Any)
+        XCTAssertNil(answer)
+    }
 }

@@ -1,10 +1,15 @@
 import Foundation
 
 public struct CrackStation : Decrypter {
-    public init() {}
+    private let lookupTable : [String : String]
+    public init() {
+        lookupTable = CrackStation.loadDictionaryFromDisk()
+    } 
 
-    func loadDictionaryFromDisk()  -> [String : String] {
-        guard let path = Bundle.module.url(forResource: "POCv2", withExtension: "json") else { return [:] }
+    public func decrypt(shaHash: String)->String?{return lookupTable[shaHash]}
+
+    private static func loadDictionaryFromDisk()  -> [String : String] {
+        guard let path = Bundle.module.url(forResource: "MVP", withExtension: "json") else { return [:] }
         do{
             let data = try Data(contentsOf: path)
             let jsonResult = try JSONSerialization.jsonObject(with: data)
@@ -14,19 +19,10 @@ public struct CrackStation : Decrypter {
             } else {
                 print("json read error")
                 return [:]
-            }
-            
+            }        
         } catch {
             print("no data")
             return [:]
         }
-        
-    }
-public func decrypt(shaHash: String)->String?{
-        
-        
-            let lookupTable = loadDictionaryFromDisk()
-            return lookupTable[shaHash] as String?
-            
     }
 }

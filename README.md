@@ -1,46 +1,46 @@
-# CrackStation
-
-###  Author name : Te-Chia, Fan 
-### -  version 1.0.0
-
+# CrackStation, a Decrypter implementation
 >
-CrackStation (POCv2) is a SHA1 and SHA256 hash decode library. You can input one or two characters [A-Z, a-z, and 0-9] SHA1 or SHA256 hash codes. The CrackStation will decode and return the character. 
+The hash code decrypts to the character.  
 >
-#### Function of CrackStation 
+## Overview 
 
-1) Crackstation has one and two character SHA1 and SHA256 hash code library. 
-2) You can give String SHA1 or SHA256 hash code to the CrackStation and the CrackStation will decode and return the character or nil. 
+CrackStation (MVP) is an SHA-1, and SHA-256 decrypt station. You can input one to three [A-Za-z0-9?!] characters of SHA-1 or SHA-256 shaHash codes. The CrackStation will decode and return the character.
 
-3) You can use this library to be imported as a dependency into a desktop application, a command-line application.
+## Mission Statement
 
-#### How to use this CrackStation
+You can use this CrackStation as a public API when you need to decode the SHA-1 or SHA-256 password or input. You can send the shaHash code to this CrackStation and use the return characters to make sure the password or the code you input is correct.
 
-- You can use this CrackStation as a public API(an application programming interface made publicly available to software developers) when you need to decode the SHA1 or SHA256 password or input. You can send the hash code to this CrackStation and use the return characters to make sure the password or the code that you input is correct or not.    
+## Installation
+### swift Package Manager
+The Swift Package Manager is “a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.”
 
-#### How to run my code
+Once you have your Swift package set up, add CrackStation to the list of dependencies in your `Package.swift` file:
+```swift
+dependencies:[
+	.package(url: “…”, .upToNextMajor(from: “…”))
+]
+```
+## Usage
+### The API
+The public API have two function:
+>`Init`: For creating and reading in the descriptor dictionary.
+`decrypt`: For decrypting shaHash back to plain-text passwords.
+>
 
-1) Go in the direction 
-```bash
+### An example
+1.	Go in the direction
+```swift
     ./CrackStation
 ```
-
-2) Separately run the following two commands in the terminal
-
+2.	Separately run the following two commands in the terminal
 ```swift
     swift build
-```
-```swift
     swift test
 ```
-3) The unit test result will print on the monitor
+3.	The unit test result will print on the monitor
 
+- If you want to test other SHA1 hash codes in my crackststion area. You can change "func testGetWord" input String SHA1 hash code to your SHA1 hash code and run "swift test" again. You can get the character you want.
+- If you want to test other SHA1 hash codes that are NOT in my crackststion area. You can change "fnuc testError" input string SHA1 hash code to your SHA1 hash code and run "swift test" again. You can get nil
 
-
-## Note
-- If you want to test other SHA1 or SHA256 hash codes that are in my CrackStation. You can change the "func testGetWord" input String hash code to your hash code and run the "swift test" again. You can get the character you want.
-- If you want to test other SHA1 or SHA256 hash codes that are NOT in my CrackStation area. You can change the "fnuc testError" input string hash code to your hash code and run "swift test" again. You can get nil.
-
-
-
-
-
+### Author
+- Te-Chia, Fan

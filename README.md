@@ -17,7 +17,7 @@ The Swift Package Manager is “a tool for managing the distribution of Swift co
 Once you have your Swift package set up, add CrackStation to the list of dependencies in your `Package.swift` file:
 ```swift
 dependencies:[
-	.package(url: “…”, .upToNextMajor(from: “…”))
+	.package(url: "git@github.com:samuelfan-tw/CrackStation.git", from: "1.1.2")
 ]
 ```
 ## Usage
@@ -44,3 +44,7 @@ The public API have two function:
 
 ### Author
 - Te-Chia, Fan
+
+
+
+ 
